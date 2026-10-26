@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteRule ^$ FrontEND/ [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ FrontEND/$1 [L]
+Options -Indexes
