@@ -1,0 +1,23 @@
+<?php
+include_once"includes/config.php";
+include_once"includes/class.template.php";
+include_once"includes/class.language.php";
+include_once"includes/functions.php";
+if(setting("site_open") == "2"){
+$template->get("masseg_close");
+$template->replace("{MASSEG_CLOSE}",setting("site_masseg_close"));
+$template->replace("{PAGE_TITLE}",getTitle());
+$template->replace("{SITE_KEY}",setting("site_key"));
+$template->replace("{SITE_DESC}",setting("site_desc"));
+$template->replace("{TEMPLATE_CSS}",$template->css_template());
+$template->run();
+exit();
+}
+$template->get("header");
+$template->replace("{PAGE_TITLE}",getTitle());
+$template->replace("{SITE_NAME}",setting("site_name"));
+$template->replace("{SITE_KEY}",setting("site_key"));
+$template->replace("{SITE_DESC}",setting("site_desc"));
+$template->replace("{TEMPLATE_CSS}",$template->css_template());
+$template->run();
+?>

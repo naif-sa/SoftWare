@@ -1,0 +1,5 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule index\.html$ index.php
+RewriteRule ^f(.*)\.html$ showforum.php?f=$1 [L]
+RewriteRule ^t(.*)\.html$ showthread.php?t=$1 [L]
